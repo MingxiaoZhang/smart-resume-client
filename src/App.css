@@ -1,5 +1,26 @@
 .App {
   text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+* { 
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+   box-sizing: border-box; 
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  padding: 10px 15%;
+  background: linear-gradient(20deg, #515052, #140420);
+  text-align: center;
+  color: rgb(241, 241, 241)
 }
 
 .App-logo {

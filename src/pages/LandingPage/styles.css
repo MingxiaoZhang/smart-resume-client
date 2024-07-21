@@ -1,0 +1,30 @@
+  .landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .info {
+    margin-bottom: 20px;
+  }
+  
+  .get-started-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1890ff;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    width: 150px;
+  }
+  
+  .get-started-button:hover {
+    background-color: #40a9ff;
+  }
+  

@@ -1,0 +1,9 @@
+.profile-page {
+    width: 100%;
+    margin-top: 10%;
+    text-align: left;
+}
+
+.profile-page hr {
+    background-color: white;
+}
