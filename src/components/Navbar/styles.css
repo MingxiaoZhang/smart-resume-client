@@ -16,6 +16,7 @@
     padding: 10px 15%;
     position: fixed;
     width: 100%;
+    height: 10vh;
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px); /* Optional: Adds a blur effect behind the navbar */

@@ -40,9 +40,6 @@ const ResumeGenerator: React.FC = () => {
             }, {
                 headers: { Authorization: `Bearer ${token}` },
             });
-            setCompany('');
-            setJobTitle('');
-            setJobDescription('');
             setIsFetching(true);
             setTaskId(response.data.task_id);
         } catch (error) {
@@ -53,11 +50,16 @@ const ResumeGenerator: React.FC = () => {
     return (
         <div style={{textAlign: 'left'}}>
             <form onSubmit={handleSubmit} className='job-form'>
-                <h2>Fill in the company info to generate your customized resume</h2>
-                <input type="text" placeholder="Company" value={company} onChange={(e) => setCompany(e.target.value)} />
-                <input type="text" placeholder="Job Title" value={jobTitle} onChange={(e) => setJobTitle(e.target.value)} />
-                <textarea placeholder="Job Description" value={jobDescription} onChange={(e) => setJobDescription(e.target.value)} />
-                {!isFetching && <button type="submit">Generate Resume</button>}
+            {!isFetching ?
+                <>
+                    <h2>Fill in the company info to generate your customized resume</h2>
+                    <input type="text" placeholder="Company" value={company} onChange={(e) => setCompany(e.target.value)} />
+                    <input type="text" placeholder="Job Title" value={jobTitle} onChange={(e) => setJobTitle(e.target.value)} />
+                    <textarea placeholder="Job Description" value={jobDescription} onChange={(e) => setJobDescription(e.target.value)} />
+                    <button type="submit">Generate Resume</button>
+                </>
+                :<h2>Generating your resume. Please wait...</h2>
+            }
             </form>
         </div>
     );
