@@ -77,3 +77,9 @@
   .btn:hover {
     opacity: 0.9;
   }
+
+  a {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }

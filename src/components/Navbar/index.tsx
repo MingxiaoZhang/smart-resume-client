@@ -20,8 +20,8 @@ const Navbar: React.FC = () => {
         </div>
         :
         <div className="navbar-buttons">
-        <button className="btn sign-up">Sign Up</button>
-        <button className="btn login">Login</button>
+        <button className="btn sign-up"><a href="/register">Sign Up</a></button>
+        <button className="btn login"><a href="/login">Login</a></button>
       </div>
       }
       

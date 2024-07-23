@@ -31,8 +31,8 @@ const LandingPage: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="info"
         >
-          <h1>Welcome to My App</h1>
-          <p>This app is designed to help you get started with your journey.</p>
+          <h1>Welcome to Smart Resume</h1>
+          <p>This app is designed to customize your resume for every unique job description.</p>
         </motion.div>
         <motion.button
           whileHover={{ scale: 1.1 }}

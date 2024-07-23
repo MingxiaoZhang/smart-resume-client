@@ -23,7 +23,7 @@ const LoginPage: React.FC = () => {
       setError('');
       console.log('Login successful');
       login(username, response.token);
-      navigate('/main');
+      navigate('/profile');
     } else {
       console.log('Login failed');
       setError(response.error || '');
@@ -32,7 +32,7 @@ const LoginPage: React.FC = () => {
 
   useEffect(() => {
     if (isAuthenticated()) {
-      navigate('/main');
+      navigate('/profile');
     }
   }, [])
 
