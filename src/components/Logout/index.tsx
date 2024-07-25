@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import "./styles.css";
 
 const Logout: React.FC = () => {
   const { logout } = useAuth();
@@ -13,9 +14,9 @@ const Logout: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className='logout-page'>
       <h2>Logout</h2>
-      <button onClick={handleLogout}>Logout</button>
+      <button className='logout-button' onClick={handleLogout}>Logout</button>
     </div>
   );
 };

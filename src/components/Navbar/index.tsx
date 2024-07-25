@@ -32,6 +32,7 @@ const Navbar: React.FC = () => {
             <>
               <li><a href="/profile">Profile</a></li>
               <li><a href="/resumes">Documents</a></li>
+              <li><a href="/logout">Log Out</a></li>
             </>:
             <>
               <li><a href="/login">Login</a></li>
