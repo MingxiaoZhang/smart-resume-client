@@ -11,6 +11,7 @@ import LoginPage from '../pages/LoginPage';
 import EditorPage from '../pages/EditorPage';
 import Navbar from '../components/Navbar';
 import ProfilePage from '../pages/ProfilePage';
+import ResumeList from '../components/ResumeList';
 
 const Container: React.FC = () => {
     return (
@@ -29,6 +30,9 @@ const Container: React.FC = () => {
             </Route>
             <Route element={<PrivateRoute />}>
                 <Route path="/logout" element={<Logout />} />
+            </Route>
+            <Route element={<PrivateRoute />}>
+                <Route path="/resumes" element={<ResumeList />} />
             </Route>
         </Routes>
     );
