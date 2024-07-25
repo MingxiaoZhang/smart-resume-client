@@ -3,21 +3,28 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 import './styles.css';
 import { registerService } from '../../services/AuthService';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 const RegisterPage: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState<ReactNode>();
     const [error, setError] = useState('');
+    const navigate = useNavigate();
+    const { login } = useAuth();
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        try {
-            const response = await registerService(username, password);
-            setError('');
-            setMessage(response.message);
-        } catch (error) {
-            setError(String(error));
+        const response = await registerService(username, password);
+        if (response.token) {
+        setError('');
+        console.log('Register successful');
+        login(username, response.token);
+        navigate('/profile');
+        } else {
+        console.log('Register failed');
+        setError(response.error || '');
         }
     };
 

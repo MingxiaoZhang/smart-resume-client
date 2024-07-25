@@ -17,9 +17,7 @@ const Container: React.FC = () => {
     return (
         <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route element={<PrivateRoute />}>
-                <Route path="/main" element={<MainPage />} />
-            </Route>
+            <Route path="/main" element={<MainPage />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<LoginPage />} />
             <Route element={<PrivateRoute />}>

@@ -6,7 +6,7 @@ interface LoginResponse {
 }
 
 interface RegisterResponse {
-    message?: string;
+    token?: string;
     error?: string;
 }
 
