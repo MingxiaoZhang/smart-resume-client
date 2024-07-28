@@ -11,6 +11,7 @@ const LoginPage: React.FC = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { login, isAuthenticated } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
@@ -18,6 +19,7 @@ const LoginPage: React.FC = () => {
       setError('Both fields are required');
       return
     }
+    setIsLoading(true);
     const response = await loginService(username, password);
     if (response.token) {
       setError('');
@@ -28,6 +30,7 @@ const LoginPage: React.FC = () => {
       console.log('Login failed');
       setError(response.error || '');
     }
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -42,7 +45,11 @@ const LoginPage: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
       className="login"
-    >
+    >{
+      isLoading ? 
+      <h2>Logging in...</h2>
+      :
+      <>
       <h2>Login</h2>
       <form className="login-form">
         <input
@@ -61,7 +68,8 @@ const LoginPage: React.FC = () => {
         <button onClick={handleLogin}>Login</button>
         <a href="/register">Don't have an account? Register here.</a>
       </form>
-      
+      </>
+      }
     </motion.div>
   );
 };
